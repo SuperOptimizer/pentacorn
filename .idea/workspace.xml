@@ -21,9 +21,7 @@
   </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
-      <config projectName="unicorn" targetName="unicorn" />
-      <config projectName="unicorn" targetName="riscv32-softmmu" />
-      <config projectName="unicorn" targetName="unicorn-common" />
+      <config projectName="pentacorn" targetName="pentacorn" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -35,15 +33,238 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="520df848-843f-4b3c-8b09-40037cb9826d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/config-host.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/config-target.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/third-party/riscv-tests" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+    <list default="true" id="520df848-843f-4b3c-8b09-40037cb9826d" name="Changes" comment="riscv32 compiles">
+      <change afterPath="$PROJECT_DIR$/src/rv.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rv.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/COPYING" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/COPYING.LGPL2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/COPYING_GLIB" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/garray.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/garray.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/ghash.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/glib_compat.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/glib_compat.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/glist.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/glist.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/gmacros.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/gmem.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/gmem.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/gmessages.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/gnode.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/gpattern.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/gpattern.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/grand.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/grand.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/gslice.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/gslice.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/gtestutils.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/gtestutils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/gtree.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/gtree.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/glib_compat/gtypes.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/config-host.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/config-target.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/list.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/qemu.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/uc_priv.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/unicorn/arm.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/unicorn/arm64.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/unicorn/m68k.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/unicorn/mips.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/unicorn/platform.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/unicorn/ppc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/unicorn/riscv.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/unicorn/s390x.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/unicorn/sparc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/unicorn/tricore.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/unicorn/unicorn.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/unicorn/x86.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/list.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/COPYING" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/COPYING.LIB" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/MAINTAINERS" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/accel/tcg/atomic_template.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/accel/tcg/cpu-exec-common.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/accel/tcg/cpu-exec.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/accel/tcg/cputlb.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/accel/tcg/tcg-all.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/accel/tcg/tcg-runtime-gvec.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/accel/tcg/tcg-runtime.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/accel/tcg/tcg-runtime.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/accel/tcg/translate-all.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/accel/tcg/translate-all.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/accel/tcg/translator.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/crypto/aes.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/crypto/init.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/exec-vary.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/exec.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/fpu/softfloat-specialize.inc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/fpu/softfloat.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/hw/core/cpu.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/crypto/aes.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/crypto/init.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/crypto/random.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/elf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/cpu-all.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/cpu-common.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/cpu-defs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/cpu_ldst.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/cputlb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/exec-all.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/gen-icount.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/helper-gen.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/helper-head.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/helper-proto.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/helper-tcg.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/hwaddr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/ioport.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/memattrs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/memop.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/memory-internal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/memory.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/memory_ldst.inc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/memory_ldst_cached.inc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/memory_ldst_phys.inc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/poison.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/ram_addr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/ramblock.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/ramlist.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/softmmu-semi.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/target_page.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/tb-context.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/tb-hash.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/tb-lookup.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/exec/translator.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/fpu/softfloat-helpers.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/fpu/softfloat-macros.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/fpu/softfloat-types.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/fpu/softfloat.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/hw/core/cpu.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/hw/registerfields.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/libdecnumber/dconfig.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/libdecnumber/decContext.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/libdecnumber/decDPD.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/libdecnumber/decNumber.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/libdecnumber/decNumberLocal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/libdecnumber/dpd/decimal128.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/libdecnumber/dpd/decimal128Local.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/libdecnumber/dpd/decimal32.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/libdecnumber/dpd/decimal64.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu-common.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/atomic.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/atomic128.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/bitmap.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/bitops.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/bswap.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/compiler.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/cpuid.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/crc32c.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/ctype.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/cutils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/guest-random.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/host-utils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/int128.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/log.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/osdep.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/processor.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/qdist.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/qht.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/queue.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/range.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/rcu_queue.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/thread-posix.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/thread-win32.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/thread.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/timer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/typedefs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/units.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/qemu/xxhash.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/sysemu/cpus.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/sysemu/memory_mapping.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/sysemu/os-win32.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/sysemu/sysemu.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/sysemu/tcg.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/tcg/tcg-apple-jit.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/tcg/tcg-gvec-desc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/tcg/tcg-mo.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/tcg/tcg-op-gvec.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/tcg/tcg-op.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/tcg/tcg-opc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/include/tcg/tcg.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/memory_ldst.inc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/riscv32.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/softmmu/cpus.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/softmmu/ioport.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/softmmu/memory.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/softmmu/memory_mapping.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/softmmu/unicorn_vtlb.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/softmmu/vl.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/cpu-param.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/cpu.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/cpu.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/cpu_bits.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/cpu_helper.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/cpu_user.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/csr.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/fpu_helper.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/helper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/insn_trans/trans_privileged.inc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/insn_trans/trans_rva.inc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/insn_trans/trans_rvd.inc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/insn_trans/trans_rvf.inc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/insn_trans/trans_rvi.inc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/insn_trans/trans_rvm.inc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/instmap.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/op_helper.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/pmp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/pmp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/riscv32/decode_insn16.inc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/riscv32/decode_insn32.inc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/translate.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/unicorn.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/target/riscv/unicorn.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/tcg/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/tcg/optimize.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/tcg/tcg-ldst.inc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/tcg/tcg-op-gvec.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/tcg/tcg-op-vec.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/tcg/tcg-op.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/tcg/tcg-pool.inc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/tcg/tcg-target.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/tcg/tcg-target.inc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/tcg/tcg.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/trace/mem-internal.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/trace/mem.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/unicorn_common.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/bitmap.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/bitops.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/cacheinfo.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/crc32c.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/cutils.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/getauxval.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/guest-random.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/host-utils.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/osdep.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/oslib-posix.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/pagesize.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/qdist.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/qemu-thread-posix.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/qemu-timer-common.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/qemu-timer.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/qht.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/util/range.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qemu/vl.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/third-party/riscv-tests" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uc.c" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,8 +347,8 @@
       <window_info id="Commit_Guest" show_stripe_button="false" />
       <window_info id="Pull Requests" />
       <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2311219" />
-      <window_info id="Commit" order="1" weight="0.30588624" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18203884" />
+      <window_info id="Commit" order="1" weight="0.2311219" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="TypeScript" />
@@ -141,8 +362,8 @@
       <window_info anchor="bottom" id="Problems View" order="2" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info anchor="bottom" id="Services" order="4" weight="0.33005136" />
-      <window_info anchor="bottom" id="CMake" order="5" weight="0.33005136" />
-      <window_info active="true" anchor="bottom" id="Messages" order="6" visible="true" weight="0.33005136" />
+      <window_info active="true" anchor="bottom" id="CMake" order="5" visible="true" weight="0.33005136" />
+      <window_info anchor="bottom" id="Messages" order="6" weight="0.33005136" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.33005136" />
       <window_info anchor="right" id="RustCargo" />
       <window_info anchor="right" id="make" side_tool="true" />
@@ -165,22 +386,7 @@
     </key>
   </component>
   <component name="RunManager" selected="CTest Application.All CTest">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="riscv32-softmmu" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="unicorn" TARGET_NAME="riscv32-softmmu" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="unicorn-common" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="unicorn" TARGET_NAME="unicorn-common" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="unicorn" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="unicorn" TARGET_NAME="unicorn" CONFIG_NAME="Debug">
+    <configuration name="pentacorn" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="pentacorn" TARGET_NAME="pentacorn" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="pentacorn" RUN_TARGET_NAME="pentacorn">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -192,9 +398,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.riscv32-softmmu" />
-      <item itemvalue="CMake Application.unicorn" />
-      <item itemvalue="CMake Application.unicorn-common" />
+      <item itemvalue="CMake Application.pentacorn" />
       <item itemvalue="CTest Application.All CTest" />
     </list>
   </component>
@@ -206,8 +410,18 @@
       <option name="presentableId" value="Default" />
       <updated>1758403434298</updated>
       <workItem from="1758403435663" duration="182000" />
-      <workItem from="1758403623029" duration="7061000" />
+      <workItem from="1758403623029" duration="10830000" />
+      <workItem from="1758466434611" duration="138000" />
     </task>
+    <task id="LOCAL-00001" summary="riscv32 compiles">
+      <option name="closed" value="true" />
+      <created>1758462678924</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1758462678924</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +431,10 @@
     <isAutomaticCheckingOnLaunch value="false" />
     <isAutomaticFoundErrors value="true" />
     <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="riscv32 compiles" />
+    <option name="LAST_COMMIT_MESSAGE" value="riscv32 compiles" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
